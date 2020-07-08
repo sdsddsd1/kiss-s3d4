@@ -1,5 +1,5 @@
 python
-py-sip
+py-sip make
 qt5
 libX11
 qt5-svg
