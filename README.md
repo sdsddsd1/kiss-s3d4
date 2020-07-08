@@ -1,2 +1,4 @@
 # kiss-s3d4
-my personal KISS repo
+
+Qutebrowser and the stuff it depends on are borrowed together.
+This is just a first draft but its working.
