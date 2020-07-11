@@ -1,10 +1,10 @@
 python
 py-sip make
 qt5
-libX11
-qt5-svg
+qt5-declarative
 qt5-multimedia
+qt5-svg
 qt5-tools
-qt5-x11extras
 qt5-declarative
 qt5-webchannel
+qt5-x11extras
