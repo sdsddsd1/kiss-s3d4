@@ -1,10 +1,6 @@
 python
-py-sip make
+py-sip
 qt5
-qt5-declarative
-qt5-multimedia
-qt5-svg
-qt5-tools
 qt5-declarative
 qt5-webchannel
 qt5-x11extras
