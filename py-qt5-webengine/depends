@@ -1,2 +1,4 @@
-qt5-webengine
+py-sip make
+py-qt5
 python
+qt5-webengine
