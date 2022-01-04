@@ -1,6 +1,0 @@
-#!/bin/sh -e
-
-go build -o gotop ./cmd/gotop
-
-mkdir -p "$1/usr/bin"
-cp gotop "$1/usr/bin"
