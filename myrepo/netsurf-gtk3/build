@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+export CFLAGS="$CFLAGS -fcommon"
+#export PATH="$PATH:$PWD/xxd"
+
+# Build standalone xxd to remove VIM rquirement
+#cc xxd/xxd.c -o xxd/xxd
+
+make \
+    LIBDIR=lib \
+    INCLUDEDIR=include \
+    PREFIX=/usr \
+    TARGET=gtk3
+
+make \
+    LIBDIR=lib \
+    INCLUDEDIR=include \
+    PREFIX=/usr \
+    TARGET=gtk3 \
+    DESTDIR="$1" \
+    install

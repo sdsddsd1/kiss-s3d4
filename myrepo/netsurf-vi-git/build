@@ -1,0 +1,24 @@
+#!/bin/sh -e
+
+export CFLAGS="$CFLAGS -fcommon"
+
+rm -rf netsurf
+rm -rf libcss
+
+git clone git://git.netsurf-browser.org/libcss.git
+git clone https://git.sr.ht/~sircmpwn/visurf
+mv visurf netsurf
+
+make \
+    LIBDIR=lib \
+    INCLUDEDIR=include \
+    PREFIX=/usr \
+    TARGET=visurf \
+
+make \
+    LIBDIR=lib \
+    INCLUDEDIR=include \
+    PREFIX=/usr \
+    TARGET=visurf \
+    DESTDIR="$1" \
+    install

@@ -1,0 +1,9 @@
+bison make
+cairo
+gperf make
+libpng
+pango
+openssl
+libwebp
+linux-headers make
+perl make
