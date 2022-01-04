@@ -1,0 +1,28 @@
+From d8580689750e669fb830febba8dc1dda5c60b8a8 Mon Sep 17 00:00:00 2001
+From: Christoph Erhardt <github@sicherha.de>
+Date: Thu, 23 Dec 2021 10:39:50 +0100
+Subject: [PATCH] Do not use custom `LDFLAGS` for linking `mold-wrapper.so`
+
+Linking a dynamic library with `-static` would prevent it from being
+loadable.
+
+Fixes #191.
+
+Signed-off-by: Christoph Erhardt <github@sicherha.de>
+---
+ Makefile        |  2 +-
+ build-static.sh | 10 +++++-----
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index a574edbb..5012ca21 100644
+--- a/Makefile
++++ b/Makefile
+@@ -92,7 +92,7 @@ endif
+ all: mold mold-wrapper.so
+ 
+ mold: $(OBJS) $(MIMALLOC_LIB) $(TBB_LIB) $(XXHASH_LIB)
+-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
++	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) $(EXTRA_LDFLAGS) $(OBJS) -o $@ $(LIBS)
+ 	ln -sf mold ld
+ 	ln -sf mold ld64.mold
