@@ -1,0 +1,5 @@
+Personal repository.
+Most packages are collected from around the community, but versions bumped by
+myself.
+
+Audio is served through tinyalsa and sndio.
