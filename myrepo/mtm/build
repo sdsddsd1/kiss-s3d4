@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-CFLAGS="-DNCURSESW_INCLUDE_H=\<curses.h\> $CFLAGS"
+CFLAGS="-DNCURSESW_INCLUDE_H=\<ncurses.h\> $CFLAGS"
 
 make
 

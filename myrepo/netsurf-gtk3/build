@@ -1,10 +1,10 @@
 #!/bin/sh -e
 
 export CFLAGS="$CFLAGS -fcommon"
-#export PATH="$PATH:$PWD/xxd"
+export PATH="$PATH:$PWD/xxd"
 
 # Build standalone xxd to remove VIM rquirement
-#cc xxd/xxd.c -o xxd/xxd
+cc xxd/xxd.c -o xxd/xxd
 
 make \
     LIBDIR=lib \

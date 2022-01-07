@@ -5,5 +5,7 @@ autoreconf -fi
     --prefix=/usr \
     --sysconfdir=/etc
 
+#echo '#undef HAVE_LIBNCURSESW' >> config.h
+
 make
 make DESTDIR="$1" install

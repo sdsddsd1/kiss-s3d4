@@ -1,5 +1,8 @@
 #!/bin/sh -e
 
+
+#make \
+#    SFEED_CURSES_LDFLAGS='-lcurses -lterminfo'
 make
 make \
     DESTDIR="$1" \

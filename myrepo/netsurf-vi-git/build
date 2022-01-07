@@ -1,6 +1,11 @@
 #!/bin/sh -e
 
 export CFLAGS="$CFLAGS -fcommon"
+export PATH="$PATH:$PWD/xxd"
+export NETSURF_HOMEPAGE=https://google.de
+
+# Buidl standalone xxd to remove VIM requirement.
+cc xxd/xxd.c -o xxd/xxd
 
 rm -rf netsurf
 rm -rf libcss
@@ -13,7 +18,7 @@ make \
     LIBDIR=lib \
     INCLUDEDIR=include \
     PREFIX=/usr \
-    TARGET=visurf \
+    TARGET=visurf
 
 make \
     LIBDIR=lib \

@@ -1,6 +1,7 @@
 #!/bin/sh -e
 
 patch -p1 < fix-build-against-wayland-1.20.patch
+patch -p1 < patch-src_audio_sndio_SDL_sndioaudio_c src/audio/sndio/SDL_sndioaudio.c
 
 cmake -B build \
     -DCMAKE_INSTALL_PREFIX=/usr \
