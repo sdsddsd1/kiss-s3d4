@@ -3,19 +3,18 @@
 export CFLAGS="$CFLAGS -fcommon"
 export PATH="$PATH:$PWD/xxd"
 
-# Build standalone xxd to remove VIM rquirement
+export PREFI=/usr
+export LIBDIR=lib
+export INCLUDEDIR=include
+export TARGET=gtk3
+export NETSURF_HOMEPAGE=https://google.com
+
+# Build standalone xxd to remove VIM rquirement.
 cc xxd/xxd.c -o xxd/xxd
 
-make \
-    LIBDIR=lib \
-    INCLUDEDIR=include \
-    PREFIX=/usr \
-    TARGET=gtk3
+make
+make install
 
-make \
-    LIBDIR=lib \
-    INCLUDEDIR=include \
-    PREFIX=/usr \
-    TARGET=gtk3 \
-    DESTDIR="$1" \
-    install
+mkdir -p "$1/usr/share/applications/netsurf.desktop"
+cp -f netsurf/frontends/gtk/res/netsurf-gtk.desktop \
+		"$1/usr/share/applications/netsurf.desktop"

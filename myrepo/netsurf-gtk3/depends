@@ -1,9 +1,11 @@
 bison make
 cairo
+curl
 gperf make
 libpng
-pango
-openssl
+libjpeg-turbo
 libwebp
 linux-headers make
+openssl
+pango
 perl make
