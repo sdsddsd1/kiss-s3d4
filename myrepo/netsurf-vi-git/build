@@ -1,29 +1,18 @@
 #!/bin/sh -e
 
-export CFLAGS="$CFLAGS -fcommon"
-export PATH="$PATH:$PWD/xxd"
+export PREFIX=/usr
+export LIBDIR=lib
+export INCLUDEDIR=include
+export TARGET=visurf
 export NETSURF_HOMEPAGE=https://google.de
-
-# Buidl standalone xxd to remove VIM requirement.
-cc xxd/xxd.c -o xxd/xxd
 
 rm -rf netsurf
 rm -rf libcss
-
-git clone git://git.netsurf-browser.org/libcss.git
-git clone https://git.sr.ht/~sircmpwn/visurf
 mv visurf netsurf
+mv libcss-new libcss
 
-make \
-    LIBDIR=lib \
-    INCLUDEDIR=include \
-    PREFIX=/usr \
-    TARGET=visurf
+make
+make install
 
-make \
-    LIBDIR=lib \
-    INCLUDEDIR=include \
-    PREFIX=/usr \
-    TARGET=visurf \
-    DESTDIR="$1" \
-    install
+cp -f netsurf/tools/urlfilter "$1/usr/bin/urlfilter"
+chmod +x                      "$1/usr/bin/urlfilter"
