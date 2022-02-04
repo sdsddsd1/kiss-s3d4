@@ -6,6 +6,6 @@ linux-headers make
 mesa
 pkgconf make
 python  make
-tinyalsa
+sndio
 wayland
 wayland-protocols make

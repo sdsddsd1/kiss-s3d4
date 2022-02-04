@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+meson \
+    --prefix=/usr \
+    -Dgtk_doc=false \
+    -Dmanpage=false \
+    -Dintrospection=false \
+    . build
+
+ninja -C build
+ninja -C build install

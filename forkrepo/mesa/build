@@ -55,6 +55,7 @@ meson \
     -Dgles1=true \
     -Dgles2=true \
     -Degl-native-platform=wayland \
+    -Dopengl=true \
     . output
 
 ninja -C output

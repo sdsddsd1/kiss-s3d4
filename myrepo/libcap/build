@@ -13,7 +13,7 @@ mk() {
         RAISE_SETFCAP=no \
         INDENT=" " \
         "$@"
-}
 
+}
 mk
 mk DESTDIR="$1" install
